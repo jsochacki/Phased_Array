@@ -4,7 +4,7 @@ clc
 freq_range = [24e9 28e9];   % [start_frequency stop_frequency] [Hz]
 freq_points = 101;          % No. of frequency points
 a = 0.005;                  % Ring Diameter [m]
-weights = ones(1, 5);    % Amplitude weights for N elements from 0 to 1  
+weights = ones(1, 10);    % Amplitude weights for N elements from 0 to 1  
 
 freq_step = (freq_range(2) - freq_range(1)) / (freq_points - 1); 
 frequency_vector = freq_range(1):freq_step:freq_range(2); 

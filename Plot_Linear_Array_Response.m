@@ -26,7 +26,10 @@ for n = 1:1:length(frequency_vector)
    end
 end 
 
-weights = weight_vs_angle{end}{1}{2}'.';
+weights = weight_vs_angle{end}{45}{2}'.';
+% %weights = weights .* exp(j*45*(pi/180).*(0:1:3))
+% c = 299792458; lambda = c / freq_range(end); k1 = (2 * pi)*(30*(pi/180)) / lambda;
+% weights = weights .* exp(j*k1.*(0:1:3))
 
 figure(1); 
 surf(theta_vector_degrees, frequency_vector, F); 

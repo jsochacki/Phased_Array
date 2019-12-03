@@ -6,23 +6,23 @@ phi_theta = zeros(length(theta), length(phi));
 
 switch lower(array_type)
    case 'linear'
-      for n = 1:1:180
-         for nn = 1:1:360
-            [phi_theta(n, nn), phi_theta_dB(n, nn), ~] = ...
+      for n = theta
+         for nn = phi
+            [phi_theta(n + 1, nn + 1), phi_theta_dB(n + 1, nn + 1), ~] = ...
                Uniform_Linear_Array(n * (pi / 180), frequency, d_a, weights);
          end
       end
    case 'planar'
-      for n = 1:1:180
-         for nn = 1:1:360
-            [phi_theta(n, nn), phi_theta_dB(n, nn), ~] = ...
+      for n = theta
+         for nn = phi
+            [phi_theta(n + 1, nn + 1), phi_theta_dB(n + 1, nn + 1), ~] = ...
                Uniform_Planar_Array(nn * (pi / 180), n * (pi / 180), frequency, d_a, weights);
          end
       end
    case 'circular'
-      for n = 1:1:180
-         for nn = 1:1:360
-            [phi_theta(n, nn), phi_theta_dB(n, nn), ~] = ...
+      for n = theta
+         for nn = phi
+            [phi_theta(n + 1, nn + 1), phi_theta_dB(n + 1, nn + 1), ~] = ...
                Uniform_Circular_Array(nn * (pi / 180), n * (pi / 180), frequency, d_a, weights);
          end
       end
